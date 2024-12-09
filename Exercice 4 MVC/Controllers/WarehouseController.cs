@@ -59,8 +59,12 @@ namespace Exercice_4_MVC.Controllers
         {
             // Search throught warehouses list the target warehouse by id
             var foundWarehouse = warehouseService.GetWarehouses().FirstOrDefault(w => w.Id == id);
+            if (foundWarehouse == null)
+            {
+                return NotFound();
+            }
 
-            return View();
+            return View(foundWarehouse);
         }
 
         // POST: WarehouseController/Edit/5
