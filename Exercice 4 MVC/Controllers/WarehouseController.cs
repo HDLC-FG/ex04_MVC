@@ -1,8 +1,6 @@
 ﻿using Exercice_4_MVC.Models;
 using Exercice_4_MVC.Service;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
 
 namespace Exercice_4_MVC.Controllers
 {
