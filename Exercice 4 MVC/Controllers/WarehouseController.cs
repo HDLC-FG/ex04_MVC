@@ -96,8 +96,21 @@ namespace Exercice_4_MVC.Controllers
             return RedirectToAction(nameof(Edit), nameof(Warehouse), new { id });
         }
 
+        public IActionResult ViewCode()
+        {
+            ViewBag.IsVeryfied = false;
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult ViewCode(int id, string code)
         {
+            var foundWarehouse = warehouseService.GetWarehouses().FirstOrDefault(w => w.Id == id);
+            if (foundWarehouse == null)
+            {
+                throw new Exception("L'entrepôt n'existe pas");
+            }
             ViewBag.IsVeryfied = warehouseService.VerifyCode(id, code);
             return View();
         }
