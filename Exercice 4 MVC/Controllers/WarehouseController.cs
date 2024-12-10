@@ -32,7 +32,7 @@ namespace Exercice_4_MVC.Controllers
         // GET: WarehouseController/Create
         public ActionResult Create()
         {
-            return View();
+            return View(new Warehouse());
         }
 
         // POST: WarehouseController/Create
