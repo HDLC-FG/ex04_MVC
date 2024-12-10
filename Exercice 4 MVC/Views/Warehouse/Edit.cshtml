@@ -12,8 +12,10 @@
     <div class="col-md-4">
         @{
             await Html.RenderPartialAsync("_WarehouseForm", Model);
+            await Html.RenderPartialAsync("_GenerateCode", Model);
         }
     </div>
+    <label>@TempData["Edit"]</label>
 </div>
 
 <div>

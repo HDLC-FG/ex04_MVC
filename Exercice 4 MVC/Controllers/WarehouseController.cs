@@ -1,4 +1,4 @@
-﻿using Exercice_4_MVC.Models;
+using Exercice_4_MVC.Models;
 using Exercice_4_MVC.Service;
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,8 +6,7 @@ namespace Exercice_4_MVC.Controllers
 {
     public class WarehouseController : Controller
     {
-
-        WarehouseService warehouseService; 
+        private readonly WarehouseService warehouseService;
 
         public WarehouseController()
         {
@@ -87,6 +86,19 @@ namespace Exercice_4_MVC.Controllers
             {
                 return View();
             }
+        }
+
+        
+        public IActionResult GenerateCode(int id)
+        {
+            var code = warehouseService.GenerateCode(id);
+            TempData["Edit"] = code;
+            return RedirectToAction(nameof(Edit), nameof(Warehouse), new { id });
+        }
+
+        public IActionResult ViewCode(int id)
+        {
+            return View();
         }
 
         private void ApplyFormCollectionToWarehouse(IFormCollection collection, Warehouse foundWarehouse)

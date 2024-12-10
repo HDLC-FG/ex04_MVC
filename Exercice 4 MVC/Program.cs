@@ -23,5 +23,9 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Warehouse}/{action=Index}/{id?}");
+app.MapControllerRoute(
+    name: "GenerateCode",
+    pattern: "{controller=Warehouse}/{action=GenerateCode}/{id?}");
+
 
 app.Run();

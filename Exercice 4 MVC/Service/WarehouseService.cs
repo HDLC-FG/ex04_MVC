@@ -1,8 +1,7 @@
-﻿using Exercice_4_MVC.Data;
-using Exercice_4_MVC.Models;
-using Microsoft.AspNetCore.Components.Forms;
-using System.Security.Cryptography;
+﻿using System.Security.Cryptography;
 using System.Text;
+using Exercice_4_MVC.Data;
+using Exercice_4_MVC.Models;
 
 namespace Exercice_4_MVC.Service
 {
