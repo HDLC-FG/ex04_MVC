@@ -43,9 +43,10 @@
                 @Html.DisplayFor(modelItem => item.PostalCode)
             </td>
             <td>
-                    @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-                    @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+                    @Html.ActionLink("Edit", "Edit", new { item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { item.Id }) |                    
+                    @Html.ActionLink("Vérifier le Code", "ViewCode", new { Id = item.Id, Code = item.CodeAccesMD5 })
             </td>
         </tr>
 }

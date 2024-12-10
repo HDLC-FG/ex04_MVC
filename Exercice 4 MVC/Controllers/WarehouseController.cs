@@ -1,4 +1,4 @@
-using Exercice_4_MVC.Models;
+﻿using Exercice_4_MVC.Models;
 using Exercice_4_MVC.Service;
 using Microsoft.AspNetCore.Mvc;
 
@@ -96,8 +96,9 @@ namespace Exercice_4_MVC.Controllers
             return RedirectToAction(nameof(Edit), nameof(Warehouse), new { id });
         }
 
-        public IActionResult ViewCode(int id)
+        public IActionResult ViewCode(int id, string code)
         {
+            ViewBag.IsVeryfied = warehouseService.VerifyCode(id, code);
             return View();
         }
 

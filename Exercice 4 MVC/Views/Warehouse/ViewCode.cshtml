@@ -1,0 +1,14 @@
+﻿@{
+    string message;
+    if (ViewBag.IsVeryfied)
+        message = "Le code est validé";
+    else
+        message = "Le code n'est pas validé";
+
+}
+
+<label>@message</label>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
